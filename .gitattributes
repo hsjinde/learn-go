@@ -1,0 +1,4 @@
+# Go 原始碼一律用 LF 換行，避免 Windows 上 gofmt 抱怨 CRLF
+*.go text eol=lf
+go.mod text eol=lf
+go.sum text eol=lf

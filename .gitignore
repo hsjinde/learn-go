@@ -1,0 +1,10 @@
+# go build 產生的執行檔
+*.exe
+*.test
+*.out
+
+# 環境變數與密鑰
+.env
+
+# 編輯器
+.vscode/
