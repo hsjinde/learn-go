@@ -18,7 +18,56 @@
 
 package main
 
+import (
+	"fmt"
+	"path/filepath"
+	"strings"
+)
+
 func main() {
 	// TODO: 從這裡開始寫
 	// 提示：用到 fmt、path/filepath、strings 時，記得加到 import
+	fileName := "test.exe"
+	fmt.Println(fileName)
+	const sizeBytes = 40 * 1024 * 1024
+	const maxSize = 50 * 1024 * 1024
+	if sizeBytes > maxSize {
+		fmt.Println("檔案過大")
+		return
+	} else if sizeBytes == 0 {
+		fmt.Println("檔案為空")
+		return
+	} else {
+		fmt.Println("處理中...")
+	}
+
+	//name := "test.exe"
+	switch strings.ToLower(filepath.Ext(fileName)) {
+	case ".pdf":
+		fmt.Println(fileName, "→ PDF 解析器")
+	case ".docx":
+		fmt.Println(fileName, "→ 使用 Word 解析器")
+	case ".txt", ".md": // 多值 case：任一個符合就進來
+		fmt.Println(fileName, "→ 純文字解析器")
+	default:
+		fmt.Println(fileName, "→ 不支援，略過")
+		return
+	}
+
+	const maxRetries = 3
+	const succeedOn = 2
+	retry := 0
+	for retry < maxRetries {
+		retry++
+		fmt.Printf("第 %d 次嘗試…\n", retry)
+		if retry == succeedOn {
+			fmt.Println("成功")
+			break
+		}
+		if retry == maxRetries {
+			fmt.Println("放棄")
+			break
+		}
+	}
+
 }

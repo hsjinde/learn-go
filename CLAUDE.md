@@ -48,8 +48,8 @@ D:\learn go\
 | 課 | 主題 | 對應專案用途 | 狀態 |
 |---|---|---|---|
 | 01 | 程式結構、變數、型別、零值、常數、fmt | 一切的基礎 | ✅ 完成 |
-| 02 | if / for / switch | 依副檔名分派、切 chunk、失敗重試 | ⏳ 進行中（等練習題） |
-| 03 | slice、map、range | 存檔案清單、hash 對照表 | 未開始 |
+| 02 | if / for / switch | 依副檔名分派、切 chunk、失敗重試 | ✅ 完成 |
+| 03 | slice、map、range | 存檔案清單、hash 對照表 | ⏳ 進行中（等練習題） |
 | 04 | 函式、多回傳值、error 處理 | 「錯誤一律處理」的規範 | 未開始 |
 | 05 | struct、method、pointer | 定義 `File{Path, Size, ModTime}` | 未開始 |
 | 06 | interface | `Extractor` 介面設計 | 未開始 |
@@ -80,6 +80,11 @@ D:\learn go\
 ### 第 2 課
 - 已教：if（含初始化敘述與作用範圍）、for 的四種形式、`range` 整數（Go 1.22+）、switch（不需要 break、多值 case、無條件 switch）
 - 練習題：`exercise02` 模擬「大小判斷 → 依副檔名分派 → 失敗重試 3 次」
+- 作業 review（2026-11-18，第 4 次通過）：
+  - 卡過的點：`const x := ...`（const 只能用 `=`）、用 `or` 而不是 `||`、同一範圍重複 `:=`、把沒用到的 import 註解掉而不是去用它
+  - 卡最久的點：`main` 裡的 `return` = 程式結束；沒 return 的話判斷完還會往下跑
+  - 曾直接複製 lesson 範例的變數（`name`），導致判斷的不是同一個檔案 → 提醒「複製後要對齊自己的變數」
+  - 學習者表示看不懂條列式 review 時，改用「第幾行 → 改成什麼 → 預期輸出」的步驟式說明比較有效
 
 ## 常見易錯點（Python 背景）
 
